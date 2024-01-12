@@ -43,23 +43,23 @@ registerRoute(
   })
 );
 
-// Handle offline requests
-offlineFallback({
-  strategy: pageCache,
-});
+// // Handle offline requests
+// offlineFallback({
+//   strategy: pageCache,
+// });
 
-// Additional logic for handling other types of assets or routes
-// ...
+// // Additional logic for handling other types of assets or routes
+// // ...
 
-// Add logic to clean up old caches when a new service worker is activated
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((cacheName) => cacheName.startsWith('your-prefix') && cacheName !== 'your-current-cache-name')
-          .map((cacheName) => caches.delete(cacheName))
-      );
-    })
-  );
-});
+// // Add logic to clean up old caches when a new service worker is activated
+// self.addEventListener('activate', (event) => {
+//   event.waitUntil(
+//     caches.keys().then((cacheNames) => {
+//       return Promise.all(
+//         cacheNames
+//           .filter((cacheName) => cacheName.startsWith('your-prefix') && cacheName !== 'your-current-cache-name')
+//           .map((cacheName) => caches.delete(cacheName))
+//       );
+//     })
+//   );
+// });
